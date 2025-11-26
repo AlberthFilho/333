@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>AYCHA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- METATAGS PARA WHATSAPP -->
+    <meta property="og:title" content="AYCHA">
+    <meta property="og:description" content="Me dá uma chance nunca?">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AlberthR3/img/main/foto.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="300">
+    <meta property="og:url" content="https://alberthr3.github.io/333/">
+    <meta property="og:type" content="website">
+
+    <style>
+        body {
+            background: #f3f3f3;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .painel {
+            background: white;
+            max-width: 520px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+        }
+        h1 { color: #333; margin-bottom: 20px; }
+        h2 { color: #555; margin-bottom: 25px; }
+        #sim, #nao {
+            height: 45px;
+            width: 100px;
+            border-radius: 10px;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            font-weight: bold;
+        }
+        #sim { background: green; position: relative; }
+        #nao { background: red; position: absolute; }
+        #resultado { display: none; margin-top: 20px; padding-top: 20px; border-top: 2px solid #f0f0f0; }
+        #resultado a {
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .whatsapp { background: #25D366; color: white !important; font-size: 22px; }
+        .youtube { background: #FF0000; color: white !important; font-size: 20px; }
+    </style>
+</head>
+<body>
+<div class="painel">
+    <h1>AYCHA</h1>
+    <img src="https://raw.githubusercontent.com/AlberthR3/img/main/foto.jpg" alt="Foto">
+    <h2>Me dá uma chance nunca?</h2>
+    <button id="sim" onclick="mostrarContato()">Sim!</button>
+    <button id="nao">Não</button>
+    <div id="resultado">
+        <h2>Meu número:</h2>
+        <a href="https://wa.me/5598983070624" class="whatsapp">📱 (98) 98307-0624</a>
+        <h2 style="margin-top:20px;">Olha isso aqui ❤️</h2>
+        <a href="https://youtu.be/izGwDsrQ1eQ?si=Qu3kuaPGMCshXOVi" class="youtube">▶️ Abrir Vídeo no YouTube</a>
+    </div>
+</div>
+<script>
+const botaoNao = document.getElementById("nao");
+botaoNao.addEventListener("mouseover", fuja);
+botaoNao.addEventListener("touchstart", fuja);
+function fuja() {
+    const painel = document.querySelector(".painel");
+    const maxX = painel.clientWidth - botaoNao.offsetWidth;
+    const maxY = painel.clientHeight - botaoNao.offsetHeight - 20;
+    botaoNao.style.left = Math.random() * maxX + "px";
+    botaoNao.style.top = Math.random() * maxY + "px";
+}
+function mostrarContato() {
+    document.getElementById("resultado").style.display = "block";
+    document.getElementById("sim").style.display = "none";
+    document.getElementById("nao").style.display = "none";
+    document.getElementById("resultado").scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
